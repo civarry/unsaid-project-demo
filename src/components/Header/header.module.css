@@ -1,0 +1,85 @@
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  z-index: 1;
+  min-width: 345px;
+}
+
+.newTaskForm {
+  position: absolute;
+  bottom: -200px;
+  width: 100%;
+  max-width: 736px;
+  display: flex;
+  flex-direction: column; /* Updated: Make it a column layout */
+  align-items: flex-start; /* Updated: Align items to the start */
+  gap: 8px;
+  padding: 0 1rem;
+}
+
+
+.formHeader{
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: space-around;
+}
+.formTextArea{
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  align-items: center;
+  justify-content: space-around;
+  position: relative;
+}
+
+input{
+  height: 50px;
+  width: 100%;
+  padding: 10px;
+}
+.addButton{
+  height: 50px;
+  width: 50px;
+  margin-left: 8px;
+  background-color: #f2e9e2;
+  border: 2px solid #b48770;
+  color: #614d40;
+  border-radius: 10px;
+}
+.addButton:hover{
+  cursor: pointer;
+  background-color: #614d40;
+  color: #f2e9e2;
+}
+textarea{
+  width: 100%;
+  height: 100px;
+  padding: 10px;
+  resize: none;
+}
+.search,
+textarea,
+.formHeader input{
+  background-color: #f2e9e2;
+  border: 2px solid #b48770;
+  color: #614d40;
+  border-radius: 10px;
+  font-family: 'Quattrocento', serif;
+}
+
+.search::placeholder,
+textarea::placeholder,
+.formHeader input::placeholder {
+  color: #614d40;
+}
+.characterCounter {
+  bottom: 4px;
+  right: 10px;
+  font-size: 12px;
+  color: #808080;
+  font-family: 'Quattrocento', serif;
+  position: absolute;
+}
