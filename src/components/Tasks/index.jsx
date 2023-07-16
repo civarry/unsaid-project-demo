@@ -87,7 +87,9 @@ export function Tasks({ tasks, onDelete, onSearch, isAdmin }) {
       </header>
       <div className={styles.list}>
         {displayTasks.length === 0 && searchQuery !== "" ? (
-          <div className={styles.noRecords}>No records found.</div>
+          <div className={styles.noRecords}>
+            No records found for "{searchQuery}".
+          </div>
         ) : (
           displayTasks.map((task) => (
             <Task
