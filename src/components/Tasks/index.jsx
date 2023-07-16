@@ -86,16 +86,19 @@ export function Tasks({ tasks, onDelete, onSearch, isAdmin }) {
         </div>
       </header>
       <div className={styles.list}>
-        {displayTasks.length === 0
-          ? customCardContent
-          : displayTasks.map((task) => (
-              <Task
-                key={task.id}
-                task={task}
-                onDelete={onDelete}
-                isAdmin={isAdmin}
-              />
-            ))}
+        {displayTasks.length === 0 && searchQuery !== "" ? (
+          <div className={styles.noRecords}>No records found.</div>
+        ) : (
+          displayTasks.map((task) => (
+            <Task
+              key={task.id}
+              task={task}
+              onDelete={onDelete}
+              isAdmin={isAdmin}
+            />
+          ))
+        )}
+        {displayTasks.length === 0 && searchQuery === "" && customCardContent}
       </div>
     </section>
   );
