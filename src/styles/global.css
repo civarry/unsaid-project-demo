@@ -2,12 +2,12 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: 'Inter', sans-serif;
+  font-family: "Inter", sans-serif;
 }
 
 body {
   background: #191919;
-  color: #F2F2F2;
+  color: #f2f2f2;
   min-height: 100vh;
 }
 

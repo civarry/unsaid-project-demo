@@ -8,34 +8,73 @@ function SearchInput({ onSearch }) {
   function handleSearchChange(event) {
     const query = event.target.value;
     setSearchQuery(query);
-    onSearch(query);
+  }
+
+  function handleKeyPress(event) {
+    if (event.key === "Enter") {
+      onSearch(searchQuery);
+    }
+  }
+
+  function handleSearch() {
+    onSearch(searchQuery);
   }
 
   return (
-    <input
-      className={styles.search}
-      type="text"
-      placeholder="Search for keywords..."
-      value={searchQuery}
-      onChange={handleSearchChange}
-    />
+    <div className={styles.searchContainer}>
+      <input
+        className={styles.search}
+        type="text"
+        placeholder="Search for keywords..."
+        value={searchQuery}
+        onChange={handleSearchChange}
+        onKeyPress={handleKeyPress}
+      />
+      <button className={styles.queryButton} onClick={handleSearch}>
+        Search
+      </button>
+    </div>
   );
 }
 
 export function Tasks({ tasks, onDelete, onSearch, isAdmin }) {
   const [searchQuery, setSearchQuery] = useState("");
-
-  const filteredTasks = tasks.filter(
-    (task) =>
-      task.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
-      task.description.toLowerCase().includes(searchQuery.toLowerCase())
-  );
+  const [filteredTasks, setFilteredTasks] = useState([]);
 
   const taskQuantity = tasks.length;
 
   function handleSearch(query) {
     setSearchQuery(query);
+
+    if (query.trim() === "") {
+      setFilteredTasks([]);
+    } else {
+      const filteredTasks = tasks.filter(
+        (task) => task.title.toLowerCase() === query.toLowerCase()
+      );
+      setFilteredTasks(filteredTasks);
+    }
   }
+
+  const displayTasks = searchQuery ? filteredTasks : [];
+
+  // Custom Card content
+  const customCardContent = (
+    <div className={styles.customCard}>
+      {/* Example usage of Task component within custom card */}
+      <Task
+        key="custom-task"
+        task={{
+          id: "custom-task",
+          title: "Unveiling the Unsaid",
+          description:
+            "Discover the power of your own name and unlock the untold stories of your thoughts.",
+        }}
+        onDelete={onDelete}
+        isAdmin={isAdmin}
+      />
+    </div>
+  );
 
   return (
     <section className={styles.tasks}>
@@ -47,14 +86,16 @@ export function Tasks({ tasks, onDelete, onSearch, isAdmin }) {
         </div>
       </header>
       <div className={styles.list}>
-        {filteredTasks.map((task) => (
-          <Task
-            key={task.id}
-            task={task}
-            onDelete={onDelete}
-            isAdmin={isAdmin}
-          />
-        ))}
+        {displayTasks.length === 0
+          ? customCardContent
+          : displayTasks.map((task) => (
+              <Task
+                key={task.id}
+                task={task}
+                onDelete={onDelete}
+                isAdmin={isAdmin}
+              />
+            ))}
       </div>
     </section>
   );

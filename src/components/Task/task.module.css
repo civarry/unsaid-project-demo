@@ -1,11 +1,11 @@
-@import url('https://fonts.googleapis.com/css2?family=Fanwood+Text&family=Quattrocento&display=swap');
-*{
+@import url("https://fonts.googleapis.com/css2?family=Fanwood+Text&family=Quattrocento&display=swap");
+* {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
   /* outline: 1px solid red; */
 }
-.cardContainer{
+.cardContainer {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
@@ -13,40 +13,40 @@
   margin: 10px auto;
   width: 345px;
   height: 375px;
-  background-color: #FFFFFE;
-  border: 3px solid #AB9081; 
+  background-color: #fffffe;
+  border: 3px solid #ab9081;
   position: relative;
 }
-.cardHeader{
+.cardHeader {
   display: flex;
   flex-direction: row;
   justify-content: left;
   width: 100%;
-  background-color: #F3E8E5;
-  border-bottom: 3px solid #AB9081;
+  background-color: #f3e8e5;
+  border-bottom: 3px solid #ab9081;
   height: 32px;
 }
-.abcStyle{
-  background-color: #AB9081;
-  color: #5E4F42;
+.abcStyle {
+  background-color: #ab9081;
+  color: #5e4f42;
   font-weight: bold;
   font-size: 24px;
-  padding:0 5px;
+  padding: 0 5px;
   height: 30px;
 }
-.abcStyle span{
-  background-color: #AB9081;
-  font-family: 'century gothic';
-  color: #5E4F42;
+.abcStyle span {
+  background-color: #ab9081;
+  font-family: "century gothic";
+  color: #5e4f42;
   font-weight: bold;
   font-size: 24px;
-  padding:2px;
+  padding: 2px;
   height: 30px;
 }
-.cardHeader span{
+.cardHeader span {
   font-size: 24px;
-  font-family: 'Quattrocento', serif;
-  color: #5E4F42;
+  font-family: "Quattrocento", serif;
+  color: #5e4f42;
   padding: 2px;
   width: 100%;
   max-width: 90%; /* Set the desired maximum width */
@@ -54,12 +54,12 @@
   text-overflow: ellipsis;
   white-space: nowrap;
 }
-.cardHeader i{
+.cardHeader i {
   font-size: 27px;
-  color: #5E4F42;
+  color: #5e4f42;
   padding-right: 3px;
 }
-.cardBody{
+.cardBody {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -67,9 +67,9 @@
   width: 100%;
   height: 100%;
 }
-.cardDescription{
+.cardDescription {
   width: 100%;
-  background-color: #F3E8E5;
+  background-color: #f3e8e5;
   padding: 10px;
   height: 80%;
   text-align: justify;
@@ -77,31 +77,31 @@
   text-overflow: ellipsis;
   white-space: wrap;
 }
-.cardDescription p{
+.cardDescription p {
   font-size: 24px;
-  font-family: 'Fanwood Text', serif;
-  color: #5E4F42;
+  font-family: "Fanwood Text", serif;
+  color: #5e4f42;
   padding: 2px;
   display: -webkit-box;
   -webkit-box-orient: vertical;
   -webkit-line-clamp: 9; /* Adjust the number of lines to show before ellipsis */
   overflow: hidden;
 }
-.cardFooter{
+.cardFooter {
   display: flex;
-  flex-direction: row; 
+  flex-direction: row;
   justify-content: space-around;
   width: 100%;
   height: 30px;
   overflow: hidden;
 }
-.cardFooter span{
+.cardFooter span {
   font-size: 24px;
-  font-family: 'Fanwood Text', serif;
-  color: #5E4F42;
+  font-family: "Fanwood Text", serif;
+  color: #5e4f42;
 }
 
-.deleteButton{
+.deleteButton {
   width: 50px;
   height: 50px;
   background: transparent;
@@ -114,10 +114,10 @@
   bottom: 0px;
   position: absolute;
 }
-.deleteButton i{
-  color: #AB9081;
+.deleteButton i {
+  color: #ab9081;
 }
-.deleteButton:hover{
-  color: #5E4F42;
-  background:transparent;
+.deleteButton:hover {
+  color: #5e4f42;
+  background: transparent;
 }

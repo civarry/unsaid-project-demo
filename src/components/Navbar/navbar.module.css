@@ -1,11 +1,12 @@
 .header {
-  background: #0D0D0D;
+  background: #0d0d0d;
   display: flex;
   align-items: center;
   justify-content: center;
   height: 200px;
   position: relative;
-  min-width: 345px;
+  width: 100%;
+  min-width: 400px;
 }
 
 .navbar {
@@ -39,7 +40,7 @@ li {
 
 a {
   text-decoration: none;
-  font-family: 'Quattrocento', serif;
+  font-family: "Quattrocento", serif;
   color: #818180;
   padding: 5px;
   transition: color 0.3s ease;
