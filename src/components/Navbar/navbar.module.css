@@ -1,3 +1,6 @@
+* {
+  outline: #ffffff;
+}
 .header {
   background: #0d0d0d;
   display: flex;
@@ -49,4 +52,18 @@ a {
 a:hover {
   color: #ffbd59;
   border-radius: 20px;
+}
+
+/* Media query for small screens */
+@media only screen and (max-width: 480px) {
+  .header {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .navbar {
+    position: static;
+    text-align: center;
+    padding-bottom: 20px;
+  }
 }

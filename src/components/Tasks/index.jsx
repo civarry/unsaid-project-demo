@@ -49,32 +49,14 @@ export function Tasks({ tasks, onDelete, onSearch, isAdmin }) {
     if (query.trim() === "") {
       setFilteredTasks([]);
     } else {
-      const filteredTasks = tasks.filter(
-        (task) => task.title.toLowerCase() === query.toLowerCase()
+      const filteredTasks = tasks.filter((task) =>
+        task.title.toLowerCase().includes(query.toLowerCase())
       );
       setFilteredTasks(filteredTasks);
     }
   }
 
-  const displayTasks = searchQuery ? filteredTasks : [];
-
-  // Custom Card content
-  const customCardContent = (
-    <div className={styles.customCard}>
-      {/* Example usage of Task component within custom card */}
-      <Task
-        key="custom-task"
-        task={{
-          id: "custom-task",
-          title: "Unveiling the Unsaid",
-          description:
-            "Discover the power of your own name and unlock the untold stories of your thoughts.",
-        }}
-        onDelete={onDelete}
-        isAdmin={isAdmin}
-      />
-    </div>
-  );
+  const displayTasks = searchQuery ? filteredTasks : tasks;
 
   return (
     <section className={styles.tasks}>
@@ -100,7 +82,7 @@ export function Tasks({ tasks, onDelete, onSearch, isAdmin }) {
             />
           ))
         )}
-        {displayTasks.length === 0 && searchQuery === "" && customCardContent}
+        {displayTasks.length === 0 && searchQuery === ""}
       </div>
     </section>
   );

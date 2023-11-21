@@ -19,14 +19,13 @@
   padding: 0 1rem;
 }
 
-
-.formHeader{
+.formHeader {
   display: flex;
   width: 100%;
   align-items: center;
   justify-content: space-around;
 }
-.formTextArea{
+.formTextArea {
   display: flex;
   flex-wrap: wrap;
   width: 100%;
@@ -35,12 +34,12 @@
   position: relative;
 }
 
-input{
+input {
   height: 50px;
   width: 100%;
   padding: 10px;
 }
-.addButton{
+.addButton {
   height: 50px;
   width: 50px;
   margin-left: 8px;
@@ -49,12 +48,12 @@ input{
   color: #614d40;
   border-radius: 10px;
 }
-.addButton:hover{
+.addButton:hover {
   cursor: pointer;
   background-color: #614d40;
   color: #f2e9e2;
 }
-textarea{
+textarea {
   width: 100%;
   height: 100px;
   padding: 10px;
@@ -62,12 +61,12 @@ textarea{
 }
 .search,
 textarea,
-.formHeader input{
+.formHeader input {
   background-color: #f2e9e2;
   border: 2px solid #b48770;
   color: #614d40;
   border-radius: 10px;
-  font-family: 'Quattrocento', serif;
+  font-family: "Quattrocento", serif;
 }
 
 .search::placeholder,
@@ -80,6 +79,6 @@ textarea::placeholder,
   right: 10px;
   font-size: 12px;
   color: #808080;
-  font-family: 'Quattrocento', serif;
+  font-family: "Quattrocento", serif;
   position: absolute;
 }
